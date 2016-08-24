@@ -58,6 +58,7 @@
     // Do any additional setup after loading the view.
 }
 - (void)callGetOffers {
+     MBProgressHUD *hud1 = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.label.text = NSLocalizedString(@"Loading...", @"HUD loading title");
     if ([restClient rechabilityCheck]) {
