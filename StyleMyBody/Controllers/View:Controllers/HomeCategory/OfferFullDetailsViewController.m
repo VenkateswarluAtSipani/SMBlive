@@ -58,7 +58,6 @@
     // Do any additional setup after loading the view.
 }
 - (void)callGetOffers {
-     MBProgressHUD *hud1 = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.label.text = NSLocalizedString(@"Loading...", @"HUD loading title");
     if ([restClient rechabilityCheck]) {
@@ -536,7 +535,7 @@
         }else{
             [restClient claimPackageWithID:offerFullDetailModel.packageId callBackRes:^(BookingResponseModel *latestVersion, NSError *error) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    BookingViewController *bookingViewController=  [self.storyboard instantiateViewControllerWithIdentifier:@"BookingViewController"];
+                    BookingViewController *bookingViewController=  [[UIStoryboard storyboardWithName:@"BookingAndPayment" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"BookingViewController"];
                     bookingViewController.bookingModel=latestVersion;
                     [self.navigationController pushViewController:bookingViewController animated:YES];
                                 });
@@ -546,7 +545,7 @@
         }
     }else{
         
-        SignViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SIgnVC"];
+        SignViewController *vc = [[UIStoryboard storyboardWithName:@"LoginFlow" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SIgnVC"];
         vc.viewFrom = FromOther;
         NSLog(@"%lu",(unsigned long)vc.viewFrom);
         [self.navigationController pushViewController:vc animated:NO];

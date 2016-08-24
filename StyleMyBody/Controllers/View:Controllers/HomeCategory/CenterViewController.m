@@ -210,7 +210,8 @@
 
     }else{
         
-        SignViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SIgnVC"];
+        
+        SignViewController *vc = [[UIStoryboard storyboardWithName:@"LoginFlow" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SIgnVC"];
         vc.viewFrom = FromOther;
         NSLog(@"%lu",(unsigned long)vc.viewFrom);
         [self.navigationController pushViewController:vc animated:NO];

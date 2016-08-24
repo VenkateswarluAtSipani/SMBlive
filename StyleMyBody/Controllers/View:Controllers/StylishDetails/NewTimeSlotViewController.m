@@ -1424,8 +1424,6 @@
     [ContentView insertSubview:view belowSubview:placardView];
     //[ContentView addSubview:view];
 
-  
-    
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     BookingViewController*bookingViewController = segue.destinationViewController;
@@ -1496,7 +1494,14 @@
             NSDictionary *resDict1 = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
             dispatch_async(dispatch_get_main_queue(), ^{
                 if ([resDict1 valueForKey:@"bookingId"]) {
-                    [self performSegueWithIdentifier:@"bookingPage" sender:resDict1];
+                    //[self performSegueWithIdentifier:@"bookingPage" sender:resDict1];
+                    
+                    BookingViewController*bookingViewController=[[UIStoryboard storyboardWithName:@"BookingAndPayment" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"BookingViewController"];
+                    
+                    bookingViewController.appointmentDict=resDict1;
+                    
+                    [self.navigationController pushViewController:bookingViewController animated:YES];
+                    
                     
                 }else{
                     UIAlertController * view=   [UIAlertController

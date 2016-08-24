@@ -21,6 +21,7 @@
 #import "SettingsViewController.h"
 #import "AppointmentsViewController.h"
 #import "SettingsViewController.h"
+#import "SignViewController.h"
 
 @interface ViewController ()<UICollectionViewDataSource, UICollectionViewDelegate,CLLocationManagerDelegate>{
     
@@ -203,7 +204,7 @@ if ([restClient rechabilityCheck]) {
         if (indexPath.row == 6) {
             [self callLogOutFunctionality];
         }else if (indexPath.row ==1){
-            AppointmentsViewController *appointmentsViewController=[self.storyboard instantiateViewControllerWithIdentifier:@"appointments"];
+            AppointmentsViewController *appointmentsViewController=[[UIStoryboard storyboardWithName:@"AppointmentHistory" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"appointments"];
             [self showViewControllerInContainerView:appointmentsViewController];
             MenuItemContainerView.hidden=NO;
             menuItemTitleView.hidden=NO;
@@ -212,7 +213,8 @@ if ([restClient rechabilityCheck]) {
         }else if (indexPath.row ==2){
             
         }else if (indexPath.row==3){
-            SettingsViewController *settingsViewController=[self.storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
+            
+            SettingsViewController *settingsViewController=[[UIStoryboard storyboardWithName:@"Settings" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SettingsViewController"];
             [self showViewControllerInContainerView:settingsViewController];
            MenuItemContainerView.hidden=NO;
             menuItemTitleView.hidden=NO;
@@ -222,22 +224,24 @@ if ([restClient rechabilityCheck]) {
             
         }else if (indexPath.row==5){
             
-            ContactUsViewController *contactUsViewController=[self.storyboard instantiateViewControllerWithIdentifier:@"ContactUsViewController"];
+            ContactUsViewController *contactUsViewController=[[UIStoryboard storyboardWithName:@"CMSPages" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"ContactUsViewController"];
             [self showViewControllerInContainerView:contactUsViewController];
             
-           MenuItemContainerView.hidden=NO;
+            MenuItemContainerView.hidden=NO;
             menuItemTitleView.hidden=NO;
             menuItemTitleLbl.text=@"Contact Us";
  
         }
     }else{
         if (indexPath.row == 0) {
-            [self performSegueWithIdentifier:@"signVC" sender:nil];
+            
+            [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"LoginFlow" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SIgnVC"] animated:YES];
+        
         }else if (indexPath.row ==1){
             
         }else if (indexPath.row ==2){
             MenuItemContainerView.hidden=NO;
-            ContactUsViewController *contactUsViewController=[self.storyboard instantiateViewControllerWithIdentifier:@"ContactUsViewController"];
+            ContactUsViewController *contactUsViewController=[[UIStoryboard storyboardWithName:@"CMSPages" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"ContactUsViewController"];
             [self showViewControllerInContainerView:contactUsViewController];
 
         }

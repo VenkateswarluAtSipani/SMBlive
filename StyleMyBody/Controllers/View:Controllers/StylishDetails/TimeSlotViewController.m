@@ -851,8 +851,8 @@
     
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-      BookingViewController*bookingViewController = segue.destinationViewController;
-    bookingViewController.appointmentDict=sender;
+//      BookingViewController*bookingViewController = segue.destinationViewController;
+//    bookingViewController.appointmentDict=sender;
 }
 
 @end
