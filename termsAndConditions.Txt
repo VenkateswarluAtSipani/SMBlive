@@ -1,0 +1,9 @@
+<p>
+
+By tapping on done, you are indicating that you have read the
+
+<a href=“http://stylemybody.com/smb/termsofservices” style="color:#FF6B3D;">Terms of Services</a> and agree to  the
+
+<a href=“http://stylemybody.com/smb/termsofservices” style="color:#FF6B3D;">Terms if Policy</a>
+
+</p>
