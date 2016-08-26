@@ -21,6 +21,7 @@
 		184C1D5A1D6D9E5600EC359D /* AppointmentHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184C1D591D6D9E5500EC359D /* AppointmentHistory.storyboard */; };
 		184C1D5C1D6DA0FF00EC359D /* BookingAndPayment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184C1D5B1D6DA0FF00EC359D /* BookingAndPayment.storyboard */; };
 		184C1D5E1D6DA75A00EC359D /* CMSPages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184C1D5D1D6DA75A00EC359D /* CMSPages.storyboard */; };
+		18DA17ED1D6EB66C008EF529 /* MagnifierView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DA17EC1D6EB66C008EF529 /* MagnifierView.m */; };
 		B9F7F74E1D6AD92E00C1ECA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9F7F74D1D6AD92E00C1ECA6 /* Assets.xcassets */; };
 		B9F7F8821D6AF25700C1ECA6 /* AddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F7F7561D6AF25600C1ECA6 /* AddressCell.m */; };
 		B9F7F8831D6AF25700C1ECA6 /* BookingOfferCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F7F7581D6AF25600C1ECA6 /* BookingOfferCell.m */; };
@@ -82,7 +83,6 @@
 		B9F7F8BB1D6AF25700C1ECA6 /* ServiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F7F7D31D6AF25600C1ECA6 /* ServiceTableViewCell.m */; };
 		B9F7F8BC1D6AF25700C1ECA6 /* StylistListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F7F7D51D6AF25600C1ECA6 /* StylistListTableViewCell.m */; };
 		B9F7F8BD1D6AF25700C1ECA6 /* TimeSlotTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F7F7D71D6AF25600C1ECA6 /* TimeSlotTableViewCell.m */; };
-		B9F7F8BE1D6AF25700C1ECA6 /* TimeSlotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F7F7D91D6AF25600C1ECA6 /* TimeSlotViewController.m */; };
 		B9F7F8BF1D6AF25700C1ECA6 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F7F7DC1D6AF25600C1ECA6 /* LocationViewController.m */; };
 		B9F7F8C01D6AF25700C1ECA6 /* OTPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F7F7DE1D6AF25600C1ECA6 /* OTPViewController.m */; };
 		B9F7F8C11D6AF25700C1ECA6 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F7F7E01D6AF25600C1ECA6 /* SignInViewController.m */; };
@@ -224,6 +224,8 @@
 		184C1D5B1D6DA0FF00EC359D /* BookingAndPayment.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BookingAndPayment.storyboard; sourceTree = "<group>"; };
 		184C1D5D1D6DA75A00EC359D /* CMSPages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CMSPages.storyboard; sourceTree = "<group>"; };
 		18D4AB24D33A0D0EDDEAF79D /* Pods-StyleMyBody.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyleMyBody.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StyleMyBody/Pods-StyleMyBody.debug.xcconfig"; sourceTree = "<group>"; };
+		18DA17EB1D6EB66C008EF529 /* MagnifierView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagnifierView.h; sourceTree = "<group>"; };
+		18DA17EC1D6EB66C008EF529 /* MagnifierView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagnifierView.m; sourceTree = "<group>"; };
 		3A6C91D38CE3982C2F5F9728 /* libPods-StyleMyBody.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StyleMyBody.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9F7F74D1D6AD92E00C1ECA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9F7F7501D6AF25600C1ECA6 /* APIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIConstants.h; sourceTree = "<group>"; };
@@ -349,8 +351,6 @@
 		B9F7F7D51D6AF25600C1ECA6 /* StylistListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StylistListTableViewCell.m; sourceTree = "<group>"; };
 		B9F7F7D61D6AF25600C1ECA6 /* TimeSlotTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeSlotTableViewCell.h; sourceTree = "<group>"; };
 		B9F7F7D71D6AF25600C1ECA6 /* TimeSlotTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeSlotTableViewCell.m; sourceTree = "<group>"; };
-		B9F7F7D81D6AF25600C1ECA6 /* TimeSlotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeSlotViewController.h; sourceTree = "<group>"; };
-		B9F7F7D91D6AF25600C1ECA6 /* TimeSlotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeSlotViewController.m; sourceTree = "<group>"; };
 		B9F7F7DB1D6AF25600C1ECA6 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		B9F7F7DC1D6AF25600C1ECA6 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		B9F7F7DD1D6AF25600C1ECA6 /* OTPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPViewController.h; sourceTree = "<group>"; };
@@ -616,6 +616,8 @@
 				184C1D5B1D6DA0FF00EC359D /* BookingAndPayment.storyboard */,
 				184C1D5D1D6DA75A00EC359D /* CMSPages.storyboard */,
 				0CEA77C41CBBAB670013DE09 /* LaunchScreen.storyboard */,
+				18DA17EB1D6EB66C008EF529 /* MagnifierView.h */,
+				18DA17EC1D6EB66C008EF529 /* MagnifierView.m */,
 				0CEA77B31CBBAB670013DE09 /* Supporting Files */,
 			);
 			path = StyleMyBody;
@@ -904,8 +906,6 @@
 				B9F7F7D51D6AF25600C1ECA6 /* StylistListTableViewCell.m */,
 				B9F7F7D61D6AF25600C1ECA6 /* TimeSlotTableViewCell.h */,
 				B9F7F7D71D6AF25600C1ECA6 /* TimeSlotTableViewCell.m */,
-				B9F7F7D81D6AF25600C1ECA6 /* TimeSlotViewController.h */,
-				B9F7F7D91D6AF25600C1ECA6 /* TimeSlotViewController.m */,
 			);
 			path = StylishDetails;
 			sourceTree = "<group>";
@@ -1217,7 +1217,7 @@
 				TargetAttributes = {
 					0CEA77AF1CBBAB670013DE09 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = E3FX9BGPLG;
+						DevelopmentTeam = 8X56G73487;
 					};
 					0CEA77CB1CBBAB670013DE09 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -1406,7 +1406,6 @@
 				B9F7F8881D6AF25700C1ECA6 /* FolderHeaderCell.m in Sources */,
 				B9F7F89B1D6AF25700C1ECA6 /* CreditCardView.m in Sources */,
 				B9F7F8A51D6AF25700C1ECA6 /* OffersCell.m in Sources */,
-				B9F7F8BE1D6AF25700C1ECA6 /* TimeSlotViewController.m in Sources */,
 				B9F7F8BB1D6AF25700C1ECA6 /* ServiceTableViewCell.m in Sources */,
 				B9F7F8B01D6AF25700C1ECA6 /* FilterView.m in Sources */,
 				B9F7F8EA1D6AF25700C1ECA6 /* SocialResponseModel.m in Sources */,
@@ -1416,6 +1415,7 @@
 				B9F7F8F51D6AF25700C1ECA6 /* AppDelegate.m in Sources */,
 				B9F7F88E1D6AF25700C1ECA6 /* AppointmentBookingDetailsCell.m in Sources */,
 				B9F7F8EE1D6AF25700C1ECA6 /* StylistServiceResModel.m in Sources */,
+				18DA17ED1D6EB66C008EF529 /* MagnifierView.m in Sources */,
 				B9F7F8C01D6AF25700C1ECA6 /* OTPViewController.m in Sources */,
 				B9F7F8831D6AF25700C1ECA6 /* BookingOfferCell.m in Sources */,
 				B9F7F8C81D6AF25700C1ECA6 /* AppointmentsHistoryModel.m in Sources */,
@@ -1630,8 +1630,8 @@
 			baseConfigurationReference = 18D4AB24D33A0D0EDDEAF79D /* Pods-StyleMyBody.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Punit Sipani (JD994HX353)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Punit Sipani (JD994HX353)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1641,7 +1641,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stylemybody.smb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0f8bfc60-9339-447a-8702-7ccf4c146aa5";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1650,8 +1650,8 @@
 			baseConfigurationReference = 05EDC8EE3C3AB2105B0D78D5 /* Pods-StyleMyBody.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Punit Sipani (JD994HX353)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Punit Sipani (JD994HX353)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1661,7 +1661,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stylemybody.smb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0f8bfc60-9339-447a-8702-7ccf4c146aa5";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

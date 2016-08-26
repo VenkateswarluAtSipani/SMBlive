@@ -10,9 +10,9 @@
 #import "StylistResModel.h"
 //#import "StylistServiceResModel.h"
 #import "AllStylistsResModel.h"
-
-
-@interface NewTimeSlotViewController : UIViewController<UIScrollViewDelegate>{
+#import <ACMagnifyingView.h>
+@class ACMagnifyingView;
+ @interface NewTimeSlotViewController : UIViewController<UIScrollViewDelegate>{
     __weak IBOutlet UIView *placardView;
     
     __weak IBOutlet NSLayoutConstraint *XValueOfPlacardView;

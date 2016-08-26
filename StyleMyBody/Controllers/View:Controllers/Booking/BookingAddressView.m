@@ -8,6 +8,8 @@
 
 #import "BookingAddressView.h"
 #import "RestClient.h"
+#import <GooglePlaces/GooglePlaces.h>
+#import <GooglePlacePicker/GooglePlacePicker.h>
 
 @import GoogleMaps;
 
@@ -31,6 +33,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     restClient=[[RestClient alloc]init];
+    if (self.pageTitle.length>0) {
+        _pageTitlelbl.text=_pageTitle;
+    }
      _placesClient = [GMSPlacesClient sharedClient];
     
     
@@ -221,14 +226,22 @@
     }else{
         [restClient addAddress:localAddressModel callBackRes:^(NSData *data, NSError *error)  {
             NSDictionary* resDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-            if ([resDict valueForKey:@"addressId"]) {
-                NSString *addressId=[resDict valueForKey:@"addressId"];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    localAddressModel.addressId=[NSNumber numberWithInteger:[addressId integerValue]];
-                    [self.navigationController popViewControllerAnimated:YES];
-                });
-
-             
+            
+            if (resDict.count) {
+                if ([resDict valueForKey:@"addressId"]) {
+                    NSString *addressId=[resDict valueForKey:@"addressId"];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        
+                        if ([addressId integerValue]) {
+                            localAddressModel.addressId=[NSNumber numberWithInteger:[addressId integerValue]];
+                            [self.navigationController popViewControllerAnimated:YES];
+                        }
+                        
+                    });
+                    
+                    
+                }
+  
             }
         }];
     }

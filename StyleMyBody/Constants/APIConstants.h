@@ -92,6 +92,7 @@
 #define  GET_MultiOffers BASEURL @"customerapi/v1/multioffers"
 #define UpdateAddress BASEURL @"customerapi/v1/address/update"
 #define AddAddress BASEURL @"customerapi/v1/address/add"
+#define DeleteAddress BASEURL @"customerapi/v1/address"
 //http://ec2-52-76-234-1.ap-southeast-1.compute.amazonaws.com/customerapi/v1/booking?centerId=1&centerStylistId=1&dateTime=2016-07-19&serviceId=5%2C3&stylistId=1
 
 #define claimPackage BASEURL @"customerapi/v1/packageclaim?packageId=%@"

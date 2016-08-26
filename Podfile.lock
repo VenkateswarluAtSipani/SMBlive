@@ -1,18 +1,33 @@
 PODS:
   - CitrusPay (3.7.0):
     - JSONModel
-  - GoogleMaps (1.13.2)
-  - JSONModel (1.3.0)
+  - GoogleMaps (2.0.1):
+    - GoogleMaps/Maps (= 2.0.1)
+  - GoogleMaps/Base (2.0.1)
+  - GoogleMaps/Maps (2.0.1):
+    - GoogleMaps/Base (= 2.0.1)
+  - GooglePlacePicker (2.0.1):
+    - GoogleMaps (= 2.0.1)
+    - GooglePlaces (= 2.0.1)
+  - GooglePlaces (2.0.1):
+    - GoogleMaps/Base (= 2.0.1)
+  - iOS-MagnifyingGlass (0.0.2)
+  - JSONModel (1.4.0)
 
 DEPENDENCIES:
   - CitrusPay
   - GoogleMaps
+  - GooglePlacePicker
+  - iOS-MagnifyingGlass (~> 0.0.2)
 
 SPEC CHECKSUMS:
   CitrusPay: 1d3953aa414d51f35d8c37b22008897a38b59576
-  GoogleMaps: b20a103ff307f58392e603cf142e59d7e30374c1
-  JSONModel: 81c06ecf99190a25fa6aafceea5faffa7880868a
+  GoogleMaps: f09da64fc987c1aa29394567c3cab5a3df83c402
+  GooglePlacePicker: e7b11b732e40dbe76e8ab4c5fc2f4a7c32b96578
+  GooglePlaces: 72fab1d1651c6df0322f2aad245ffb15b80d3c56
+  iOS-MagnifyingGlass: b11b7d3e8be7de22c85f0edcaa75538bdf0827dc
+  JSONModel: 58fe3f8c29ff95ed94e7ee7dde87e807f5da5371
 
-PODFILE CHECKSUM: 2080343d91239e3f6f6e0ef0b2095a81e4ebbb62
+PODFILE CHECKSUM: d8afaa0afcee31e09aefc6d575fc1a5fee9fcd19
 
 COCOAPODS: 1.0.1

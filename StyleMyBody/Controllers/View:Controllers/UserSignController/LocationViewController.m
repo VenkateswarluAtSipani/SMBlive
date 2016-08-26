@@ -8,7 +8,7 @@
  
 #import "LocationViewController.h"
 #import <CoreLocation/CoreLocation.h>
-
+#import "ACMagnifyingView.h"
 @interface LocationViewController ()<CLLocationManagerDelegate,UISearchBarDelegate,UITableViewDataSource,UIScrollViewDelegate,UITableViewDelegate>
 {
     CLLocationManager *locationManager;

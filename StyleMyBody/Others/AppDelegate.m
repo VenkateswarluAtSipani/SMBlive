@@ -14,6 +14,7 @@
 #import "RestClient.h"
 #import "EssentialsModel.h"
 #import "APIConstants.h"
+#import <GooglePlaces/GooglePlaces.h>
 
 @interface AppDelegate ()
 {
@@ -44,7 +45,7 @@
     }
     
     [GMSServices provideAPIKey:@"AIzaSyDmHZeQUjsytw7bxbEB5YKjn2UsC5eTVsk"];
-    
+    [GMSPlacesClient provideAPIKey:@"AIzaSyDmHZeQUjsytw7bxbEB5YKjn2UsC5eTVsk"];
      NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
     
     [restClient getLatestVersionOfAPPcallBackRes:^(NSString *latestVersion, NSError *error) {

@@ -118,7 +118,7 @@
     NSDictionary *bookingInfo=appdel.bookingInfo;
     
     
-    billUrl=[NSString stringWithFormat:@"%@?bookingId=%@&verifier=%@",BillUrl,self.bookingID,[restClient getBillGenerateUrlVerifier:[bookingInfo valueForKey:@"txnId"]] ];
+    billUrl=[NSString stringWithFormat:@"%@?bookingId=%@&verifier=%@",BillUrl,self.bookingID,[restClient getBillGenerateUrlVerifier:[bookingInfo valueForKey:@"txnId"]]];
     
 //    bookingId	String	true		customer booking id
 //    verifier	String	true		verifier is required

@@ -1021,6 +1021,42 @@
     
     [postDataTask resume];
 }
+- (void)deleteAddress:(NSNumber *)addressId callBackRes:(void(^)(NSDictionary *responce, NSError *error))handler {
+    
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:addressId,@"addressId",nil];
+    NSError *error;
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:[self postRequestWithUrl:DeleteAddress withDta:postData type:@"DELETE"] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSDictionary *resDict;
+            
+            NSError *error;
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+            
+            
+            resDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+            if (httpResponse.statusCode == 200) {
+                handler(resDict,error);
+            }else  if (httpResponse.statusCode == 400) {
+                //                    NSDictionary *dict = resDict[@"errors"];
+                //                    NSDictionary * dictTemp = dict[@"field_errors"];
+                NSString *msg = [resDict objectForKey:@"message"];
+                NSError *manualerror = [[NSError alloc] initWithDomain:@"" code:httpResponse.statusCode userInfo:@{@"ErrorReason":msg }];
+                handler(nil,manualerror);
+            }
+            
+        });
+        
+        NSLog(@"%@",[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+    }];
+    
+    [postDataTask resume];
+}
+
+
 
 
 + (BOOL)validateEmailWithString:(NSString*)email

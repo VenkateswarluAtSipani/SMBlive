@@ -13,7 +13,7 @@
 
 
 @interface TimeSlotViewController : UIViewController{
-    __weak IBOutlet UIView *placardView;
+    //__weak IBOutlet UIView *placardView;
     
     __weak IBOutlet UIView *ContentView;
     

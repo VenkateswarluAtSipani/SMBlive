@@ -90,6 +90,7 @@
 - (void)getMultiOffers:(NSString *)bookingId withOfferId:(NSNumber*)offerId callBackRes:(void(^)(NSArray *data, NSError *error))handler;
 
 - (void)UpdaterAddress:(AddressListModel *)addressListModel callBackRes:(void(^)(NSData *data, NSError *error))handler;
+- (void)deleteAddress:(NSNumber *)addressId callBackRes:(void(^)(NSDictionary *responce, NSError *error))handler;
 - (void)addAddress:(AddressListModel *)addressListModel callBackRes:(void(^)(NSData *data, NSError *error))handler;
 - (void)setFevStylist:(NSNumber *)centerStylistId centerId:(NSNumber *)centerID isFev:(NSNumber *)isFev callBackRes:(void(^)(NSString *resStr, NSError *error))handler;
 - (void)goToPaymentWithParameters:(NSDictionary *)goToPaymentDict callBackHandler:(void(^)( NSDictionary *response, NSError *error))handler ;

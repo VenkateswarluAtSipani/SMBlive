@@ -19,6 +19,8 @@
     __weak IBOutlet UITextField *stateTxt;
     __weak IBOutlet UITextField *zipTxt;
 }
+@property (weak, nonatomic) IBOutlet UILabel *pageTitlelbl;
 @property(nonatomic,strong)AddressListModel *addressListModel;
+@property(nonatomic,strong)NSString *pageTitle;
 
 @end

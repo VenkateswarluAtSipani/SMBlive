@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLbl;
 @property (weak, nonatomic) IBOutlet UILabel *addressLbl;
-
+@property (weak, nonatomic) IBOutlet UIButton *editAddressBtn;
+@property (weak, nonatomic) IBOutlet UIButton *deleteArressBtn;
 
 @end
