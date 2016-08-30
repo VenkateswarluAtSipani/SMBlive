@@ -44,6 +44,8 @@
 
 - (void)sendOTP:(SignUpResModel *)requestModel callBackHandler:(void(^)(SignUpDetailsResModel *response, NSError *error))handler;
 
+- (void)ReSendOTP:(NSString *)PhNo callBackRes:(void(^)(AllFoldersResModel *foldersResModel, NSError *error))handler;
+
 - (void)category:(void(^)(SignUpResModel *response, NSError *error))handler;
 
 - (void)getHomeCategoryList:(void(^)(NSArray *catList, NSError *error))handler;

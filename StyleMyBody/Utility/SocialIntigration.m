@@ -192,7 +192,8 @@
                         NSLog( @"%@", person.identifier);
                         NSLog(@"%@",signIn.idToken);
                         socialModel.appId=person.identifier;
-                        socialModel.loginToken=signIn.idToken;
+                        socialModel.loginToken=auth.accessToken;
+                        
                         NSString *gender= person.gender;
                         if ([gender isEqualToString:@"male"] || gender.length==0) {
                             

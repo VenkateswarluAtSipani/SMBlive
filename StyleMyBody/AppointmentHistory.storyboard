@@ -129,8 +129,8 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="oFx-2Q-bal"/>
                                         <exclude reference="CdW-qP-G8P"/>
+                                        <exclude reference="oFx-2Q-bal"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -764,8 +764,8 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="nm1-Vg-mwj"/>
                                         <exclude reference="CsT-Lg-xMZ"/>
+                                        <exclude reference="nm1-Vg-mwj"/>
                                     </mask>
                                 </variation>
                             </view>

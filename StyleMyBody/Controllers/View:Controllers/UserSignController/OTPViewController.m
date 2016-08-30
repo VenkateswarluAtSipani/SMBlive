@@ -38,44 +38,50 @@
 
 - (IBAction)clickOnResend:(id)sender
 {
-
-    self.signUpModel.otp = self.otpTF.text;
-    if ([restClient rechabilityCheck]) {
-    [restClient sendOTP:self.signUpModel callBackHandler:^(SignUpDetailsResModel *response, NSError *error) {
+    [restClient ReSendOTP:self.phoneNumberLbl.text callBackRes:^(AllFoldersResModel *foldersResModel, NSError *error) {
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSString *errorMsg ;
-            if (!error) {
-            }else{
-                NSDictionary *dict = [error userInfo];
-                errorMsg = dict[@"ErrorReason"];
-            }
-            
-            
-            UIAlertController * view=   [UIAlertController
-                                         alertControllerWithTitle:@""
-                                         message:errorMsg
-                                         preferredStyle:UIAlertControllerStyleAlert];
-            
-            UIAlertAction* ok = [UIAlertAction
-                                 actionWithTitle:@"OK"
-                                 style:UIAlertActionStyleDefault
-                                 handler:^(UIAlertAction * action)
-                                 {
-                                     if (!error) {
-                                         [self dismissViewControllerAnimated:NO completion:nil];
-                                         [[NSNotificationCenter defaultCenter] postNotificationName:@"POPTOVIEWCONTROLLER" object:nil];
-                                     }
-                                 }];
-            [view addAction:ok];
-            [self presentViewController:view animated:YES completion:nil];
-        });
+        
     }];
-    }
+}
+-(IBAction)submitOtp:(id)sender{
+    [self sendOtpRequest];
 }
 
 - (void)sendOtpRequest {
-    
+    self.signUpModel.otp = self.otpTF.text;
+    if ([restClient rechabilityCheck]) {
+        [restClient sendOTP:self.signUpModel callBackHandler:^(SignUpDetailsResModel *response, NSError *error) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSString *errorMsg ;
+                if (!error) {
+                }else{
+                    NSDictionary *dict = [error userInfo];
+                    errorMsg = dict[@"ErrorReason"];
+                }
+                
+                
+                UIAlertController * view=   [UIAlertController
+                                             alertControllerWithTitle:@""
+                                             message:errorMsg
+                                             preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction* ok = [UIAlertAction
+                                     actionWithTitle:@"OK"
+                                     style:UIAlertActionStyleDefault
+                                     handler:^(UIAlertAction * action)
+                                     {
+                                         if (!error) {
+                                             [self dismissViewControllerAnimated:NO completion:nil];
+                                             [[NSNotificationCenter defaultCenter] postNotificationName:@"POPTOVIEWCONTROLLER" object:nil];
+                                         }
+                                     }];
+                [view addAction:ok];
+                [self presentViewController:view animated:YES completion:nil];
+            });
+        }];
+    }
+
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

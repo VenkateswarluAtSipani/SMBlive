@@ -802,12 +802,12 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjo-wP-KPN">
-                                <rect key="frame" x="538" y="541" width="42" height="39"/>
+                                <rect key="frame" x="538" y="541" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="8h7-JS-Bv0"/>
-                                    <constraint firstAttribute="height" constant="39" id="kCv-wq-ArQ"/>
+                                    <constraint firstAttribute="width" constant="40" id="8h7-JS-Bv0"/>
+                                    <constraint firstAttribute="height" constant="40" id="kCv-wq-ArQ"/>
                                 </constraints>
-                                <state key="normal" image="camera-1"/>
+                                <state key="normal" image="PlusIcon"/>
                                 <connections>
                                     <action selector="AddAddress:" destination="Mc9-FS-7zS" eventType="touchUpInside" id="6ma-6t-4YW"/>
                                 </connections>
@@ -816,11 +816,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hcf-7t-t9s" firstAttribute="leading" secondItem="QH7-NU-Xey" secondAttribute="leading" id="26u-M3-BYm"/>
-                            <constraint firstItem="ebg-sb-EYY" firstAttribute="top" secondItem="xjo-wP-KPN" secondAttribute="bottom" constant="20" id="I13-V5-Ocx"/>
+                            <constraint firstItem="ebg-sb-EYY" firstAttribute="top" secondItem="xjo-wP-KPN" secondAttribute="bottom" constant="19" id="I13-V5-Ocx"/>
                             <constraint firstItem="XbM-jX-ZkW" firstAttribute="leading" secondItem="QH7-NU-Xey" secondAttribute="leading" id="LdC-LI-3Sj"/>
                             <constraint firstAttribute="trailing" secondItem="XbM-jX-ZkW" secondAttribute="trailing" id="N6D-oh-8Io"/>
                             <constraint firstItem="XbM-jX-ZkW" firstAttribute="top" secondItem="QH7-NU-Xey" secondAttribute="top" constant="63" id="bjL-bV-EVu"/>
-                            <constraint firstAttribute="trailing" secondItem="xjo-wP-KPN" secondAttribute="trailing" constant="20" id="iUu-Lh-cIN"/>
+                            <constraint firstAttribute="trailing" secondItem="xjo-wP-KPN" secondAttribute="trailing" constant="22" id="iUu-Lh-cIN"/>
                             <constraint firstItem="hcf-7t-t9s" firstAttribute="top" secondItem="QH7-NU-Xey" secondAttribute="top" id="t7T-ZN-7Nm"/>
                             <constraint firstAttribute="trailing" secondItem="hcf-7t-t9s" secondAttribute="trailing" id="tVc-Ye-xhN"/>
                             <constraint firstItem="ebg-sb-EYY" firstAttribute="top" secondItem="XbM-jX-ZkW" secondAttribute="bottom" id="ti3-WP-FEK"/>
@@ -837,10 +837,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="PlusIcon" width="40" height="40"/>
         <image name="Sample-1" width="120" height="117"/>
         <image name="arrow" width="30" height="30"/>
         <image name="arrowmark" width="25" height="20"/>
-        <image name="camera-1" width="252" height="241"/>
         <image name="delate" width="25" height="20"/>
         <image name="edit" width="20" height="20"/>
         <image name="menu-1" width="30" height="25"/>

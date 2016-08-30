@@ -28,16 +28,50 @@
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
 
         NSDictionary *resDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-        LoginResponseModel *model;
-        if (httpResponse.statusCode == 200) {
-            model = [ResponseParser getLoginResponseModel:resDict];
-            handler(model,error);
-        }else  {
-            NSError *manualerror = [[NSError alloc] initWithDomain:@"" code:httpResponse.statusCode userInfo:@{@"ErrorReason":resDict[@"message"] }];
-            NSLog(@"%@",[error localizedDescription]);
-            handler(model,manualerror);
-        }
-        NSLog(@"%@",[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            NSString *token=resDict[@"token"];
+            NSString *phone=resDict[@"phone"];
+            if (phone.length==0){
+                
+                phone=[[resDict valueForKey:@"user"] valueForKey:@"phone"];
+                
+            }
+            
+            LoginResponseModel *model;
+            if (httpResponse.statusCode == 200) {
+                
+                if (phone.length>0){
+                    if (token.length==0){
+                        
+                        SignUpResModel *signUpModel=[[SignUpResModel alloc]init];
+                        signUpModel.phone=phone;
+                        signUpModel.userType=resDict[@"userType"];
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"OTPNOTIFICATION" object:signUpModel];
+                        
+                    }
+                        model = [ResponseParser getLoginResponseModel:resDict];
+                        handler(model,error);
+                    
+                }
+                
+                
+                
+            }else if (httpResponse.statusCode == 401) {
+                NSError *manualerror = [[NSError alloc] initWithDomain:@"" code:httpResponse.statusCode userInfo:@{@"ErrorReason":@"Your not registered please register" }];
+                NSLog(@"%@",[error localizedDescription]);
+                handler(model,manualerror);
+                
+            }else  {
+                NSError *manualerror = [[NSError alloc] initWithDomain:@"" code:httpResponse.statusCode userInfo:@{@"ErrorReason":resDict[@"message"] }];
+                NSLog(@"%@",[error localizedDescription]);
+                handler(model,manualerror);
+            }
+            NSLog(@"%@",[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+
+        });
+        
         
     }];
     
@@ -263,7 +297,22 @@
     
     [postDataTask resume];
 }
-
+- (void)ReSendOTP:(NSString *)PhNo callBackRes:(void(^)(AllFoldersResModel *foldersResModel, NSError *error))handler
+{
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    NSString *urlStr = [NSString stringWithFormat:@"%@?phone=%@&userType=1",RESEND_OTP_API,PhNo];
+    NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:[self getRequestWithUrl:urlStr] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        NSDictionary *resDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+        AllFoldersResModel *folderModel = [ResponseParser getFoldersList:resDict];
+        
+        NSLog(@"%@",[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+        handler(folderModel,error);
+    }];
+    [postDataTask resume];
+}
 - (void)getHomeCategoryList:(void(^)(NSArray *catList, NSError *error))handler;
 {
 

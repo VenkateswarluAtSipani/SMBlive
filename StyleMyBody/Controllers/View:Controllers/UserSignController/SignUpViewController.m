@@ -166,6 +166,34 @@
     }];
     }
 }
+- (BOOL)textField:(UITextField *) textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if (textField==_mobileNumTF) {
+        
+        
+        NSCharacterSet *nonNumberSet = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
+        
+        if ([string rangeOfCharacterFromSet:nonNumberSet].location != NSNotFound)
+        {
+            return NO;
+        }
+        
+        
+        NSInteger length = [textField.text length];
+        if (length>9 && ![string isEqualToString:@""]) {
+            return NO;
+        }
+        // This code will provide protection if user copy and paste more then 10 digit text
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if ([textField.text length]>10) {
+                textField.text = [textField.text substringToIndex:10];
+                
+            }
+        });
+
+    }
+    return YES;
+}
 
 - (IBAction)clickOnPAsswordShow:(UIButton *)sender {
     
@@ -446,6 +474,13 @@
     
     if (socialResponseModel) {
     
+        passwordsView.hidden=YES;
+        passwordsViewHeight.constant=0;
+        _passwordTF.text=@"";
+        _confirmPasswordTF.text=@"";
+        
+        
+        
         //////---------to load images of fb and g+ ----------////
         
         if ([socialResponseModel.signupType integerValue]==2) {

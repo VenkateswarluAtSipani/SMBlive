@@ -15,7 +15,7 @@ PODS:
   - JSONModel (1.4.0)
 
 DEPENDENCIES:
-  - CitrusPay
+  - CitrusPay (~> 3.7)
   - GoogleMaps
   - GooglePlacePicker
   - iOS-MagnifyingGlass (~> 0.0.2)
@@ -28,6 +28,6 @@ SPEC CHECKSUMS:
   iOS-MagnifyingGlass: b11b7d3e8be7de22c85f0edcaa75538bdf0827dc
   JSONModel: 58fe3f8c29ff95ed94e7ee7dde87e807f5da5371
 
-PODFILE CHECKSUM: d8afaa0afcee31e09aefc6d575fc1a5fee9fcd19
+PODFILE CHECKSUM: 61217f6b1dcac5ff7777694ceeb2f1064b802a60
 
 COCOAPODS: 1.0.1

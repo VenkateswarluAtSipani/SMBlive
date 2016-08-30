@@ -51,8 +51,6 @@
     [restClient getLatestVersionOfAPPcallBackRes:^(NSString *latestVersion, NSError *error) {
         
         
-        
-        
         [restClient getAccentials:^(EssentialsModel *essentialsModel, NSError *error) {
             
             

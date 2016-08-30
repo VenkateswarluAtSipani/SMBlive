@@ -773,8 +773,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="Nw9-fz-y8g"/>
                                 <exclude reference="5Wu-jJ-9ym"/>
+                                <exclude reference="Nw9-fz-y8g"/>
                                 <exclude reference="YDi-Jc-8nj"/>
                             </mask>
                         </variation>
@@ -878,8 +878,8 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="Dv6-3u-sV0"/>
                                         <exclude reference="1Go-fB-XwX"/>
+                                        <exclude reference="Dv6-3u-sV0"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -965,7 +965,7 @@
                                         <rect key="frame" x="301" y="0.0" width="299" height="60"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                        <state key="normal" title="SUBMIT">
+                                        <state key="normal" title="RESEND OTP">
                                             <color key="titleColor" red="1" green="0.41568627450000001" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <state key="selected">
@@ -1008,10 +1008,30 @@
                                     <constraint firstAttribute="height" constant="2" id="NR6-a5-oXb"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOW-O7-vsP">
+                                <rect key="frame" x="252" y="382" width="97" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.41568627450000001" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Bzk-Oa-fmw"/>
+                                    <constraint firstAttribute="width" constant="97" id="Lvb-73-NJs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <state key="normal" title="SUBMIT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" red="1" green="0.41176470590000003" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitOtp:" destination="KKB-Pn-mS5" eventType="touchUpInside" id="Nvw-iw-0Di"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.94509803920000002" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="xOW-O7-vsP" firstAttribute="centerX" secondItem="FM5-MS-nI7" secondAttribute="centerX" id="A1V-TF-luV"/>
                             <constraint firstItem="V6c-sT-jah" firstAttribute="top" secondItem="gkO-Ba-AUc" secondAttribute="bottom" id="Js4-vd-WYm"/>
+                            <constraint firstItem="xOW-O7-vsP" firstAttribute="top" secondItem="7QR-Gt-WRb" secondAttribute="bottom" constant="26" id="KBD-zc-Qf8"/>
                             <constraint firstItem="fqE-7V-66S" firstAttribute="centerX" secondItem="FM5-MS-nI7" secondAttribute="centerX" id="Ka4-Fv-JIw"/>
                             <constraint firstItem="7QR-Gt-WRb" firstAttribute="centerX" secondItem="FM5-MS-nI7" secondAttribute="centerX" id="MJI-1W-LHY"/>
                             <constraint firstItem="qde-40-KZS" firstAttribute="top" secondItem="fqE-7V-66S" secondAttribute="bottom" constant="67" id="Mes-Ql-jbs"/>

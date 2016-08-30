@@ -129,12 +129,17 @@
     [restClient login:requestModel callBackHandler:^(LoginResponseModel *response, NSError *error) {
         
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    [hud hideAnimated:YES];
+
+                    
                     NSString *errorMsg ;
-                    if (!error) {
+                    if (!error && response.authToken.length>0) {
                         errorMsg = @"Successfully Login";
                         SignInDetailHandler *handler = [SignInDetailHandler sharedInstance];
                         handler.loginResModel = response;
                         handler.isSignin = YES;
+                    }else if (!error && response.authToken.length==0) {
+                        
                     }else{
                         NSDictionary *dict = [error userInfo];
                         
