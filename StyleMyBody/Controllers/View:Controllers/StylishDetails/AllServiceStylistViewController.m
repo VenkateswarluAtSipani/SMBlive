@@ -241,7 +241,7 @@
                 float XpossitionOfSuperView=widthForeachPixel*([operationHourResModel.startTimeIndex integerValue]-[startModel.startTimeIndex integerValue]);
                 UIView *topView=[[UIView alloc]initWithFrame:CGRectMake(XpossitionOfSuperView, 0, widthOfSuperView, cell.timeSlotView.frame.size.height)];
                 [cell.timeSlotView addSubview:topView];
-                CGFloat multiplier=[operationHourResModel.offset integerValue];
+            
                 //                multiplier=multiplier/duriationHoursIndex;
                 //            NSLayoutConstraint *widthOfTimeSlotView=[NSLayoutConstraint constraintWithItem:topView
                 //                                                                                                 attribute:NSLayoutAttributeWidth
